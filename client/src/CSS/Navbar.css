@@ -24,6 +24,8 @@
     font-size: 1.8rem;
     margin-right: 20px;
     cursor: pointer;
+    text-decoration: none;
+    color: #fff;
 }
 
 .navbar-right{

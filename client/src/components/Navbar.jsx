@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <span className="navbar-brand">Book Store</span>
+      <Link to="/"  className="navbar-brand">Book Store</Link> 
       </div>
 
       <div className="navbar-right">
