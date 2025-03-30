@@ -1,5 +1,5 @@
 import express from "express";
-import { Admin } from "../models/Admin";
+import { Admin } from "../models/Admin.js";
 import jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt'
 const router = express.Router();
@@ -12,7 +12,7 @@ router.post('/login', async (req, res) =>{
     if(role === "admin"){
  const admin = await Admin.findOne({username})
 if(!admin){
-    res.json({
+   return res.json({
         message: "Admin not registered"
     })
 }
@@ -33,10 +33,11 @@ const token = jwt.sign({
 res.cookie("token", token, {httpOnly:true, secure:true})
 return res.json({login:true, role: "admin"})
 
-    }else if(role === "student"){
-
-
     }
+    // else if(role === "student"){
+
+
+    // }
 })
 
 

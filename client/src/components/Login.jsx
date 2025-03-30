@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../CSS/Login.css";
+import axios from 'axios'
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -8,6 +9,9 @@ function Login() {
 
   const handleSubmit = ()=>{
 
+    axios.post('http://localhost:3001/auth/login', {username, password, role})
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
     
   }
 
@@ -18,7 +22,7 @@ function Login() {
         <br />
 
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label >Username:</label>
           <input
             type="text"
             className=""
@@ -27,7 +31,7 @@ function Login() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="username">Password:</label>
+          <label >Password:</label>
           <input
             type="password"
             className=""
@@ -36,7 +40,7 @@ function Login() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="role">Role:</label>
+          <label >Role:</label>
           <select
             name="role"
             id="role"
