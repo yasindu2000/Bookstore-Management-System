@@ -9,7 +9,7 @@ router.post('/register',verifyAdmin, async (req, res) =>{
 
     try {
 
-        const {username, password, roll, grade} = req.body
+        const {username, password, role, grade} = req.body
         const student = await Student.findOne({username})
         if(student){
             return res.json({
@@ -20,7 +20,7 @@ router.post('/register',verifyAdmin, async (req, res) =>{
         const newstudent = new Student({
             username,
             password:hashPassword,
-            roll:roll,
+            role:role,
             grade
         })
         await newstudent.save()

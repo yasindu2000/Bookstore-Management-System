@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function AddStudent() {
-  const [roll, setRoll] = useState("student");
+  const [role, setRole] = useState("student");
   const [username, setUsername] = useState("");
   const [grade, setGrade] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +13,7 @@ function AddStudent() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    axios.post("http://localhost:3001/student/register", {roll, username, grade, password})
+    axios.post("http://localhost:3001/student/register", {role, username, grade, password})
     .then(res => {
         if(res.data.registered){
            navigate("/dashboard");
@@ -30,11 +30,11 @@ function AddStudent() {
         <h2 className="">Add Student</h2>
 
         <div className="form-group">
-          <label htmlFor="roll" className="">
-            Roll No:
+          <label htmlFor="role" className="">
+            Role No:
           </label>
-          <input type="text" className="" name="roll" id="roll"
-          onChange={(e) => setRoll(e.target.value)} />
+          <input type="text" className="" name="role" id="role"
+          onChange={(e) => setRole(e.target.value)} />
         </div>
 
         <div className="form-group">
