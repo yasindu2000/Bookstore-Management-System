@@ -2,9 +2,10 @@ import express from "express";
 import { Student } from "../models/Student.js";
 import bcrypt from 'bcrypt'
 const router = express.Router();
+import { verifyAdmin } from "./auth.js";
 
 
-router.post('/register', async (req, res) =>{
+router.post('/register',verifyAdmin, async (req, res) =>{
 
     try {
 
