@@ -7,6 +7,8 @@ const router = express.Router();
 
 router.post('/login', async (req, res) =>{
 
+    try{
+
     const {username, password, role} = req.body;
 
     if(role === "admin"){
@@ -34,10 +36,18 @@ res.cookie("token", token, {httpOnly:true, secure:true})
 return res.json({login:true, role: "admin"})
 
     }
-    // else if(role === "student"){
+    else if(role === "student"){
 
 
-    // }
+    }else{
+
+
+    }
+}catch(error){
+
+    res.json(error)
+
+}
 })
 
 
