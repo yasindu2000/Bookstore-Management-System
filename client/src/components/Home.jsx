@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../CSS/Home.css'
 
+
 function Home() {
+
+  
   return (
     <div className="hero">
       <div className="hero-content">

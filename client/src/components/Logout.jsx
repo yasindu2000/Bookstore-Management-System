@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-function Logout({setRoleUpdate}) {
+function Logout({setRole}) {
   
 const navigate = useNavigate()
     useEffect(() => {
@@ -10,8 +10,8 @@ const navigate = useNavigate()
     axios.get("http://localhost:3001/auth/logout")
         .then(res =>{
 
-            if(res.data.Logout){
-                setRoleUpdate("")
+            if(res.data.logout){
+                setRole("")
                 navigate("/")
             }
         }).catch(err => console.log(err))
