@@ -8,8 +8,10 @@ function Navbar({role}) {
       <div className="navbar-left">
       <Link to="/"  className="navbar-brand">Book Store</Link> 
       </div>
-
+       
       <div className="navbar-right">
+
+        
         <Link to="/books" className="navbar-link">
           Books
         </Link>
