@@ -28,5 +28,15 @@ router.post('/add',verifyAdmin, async (req, res) =>{
      
 })
 
+router.get('/books', async (req, res)=>{
+
+    try {
+        const books = await Book.find()
+        console.log("Books fetched from DB:", books);
+        return res.json(books)
+    } catch (error) {
+        return res.json(err)
+    }
+})
 
 export {router as bookRouter}

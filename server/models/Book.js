@@ -5,7 +5,7 @@ const bookSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique: true,
+        
       },
     author: {
         type: String,
@@ -16,7 +16,7 @@ const bookSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         required: true,
-      },
+      }
 
  
   

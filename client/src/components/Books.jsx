@@ -1,15 +1,21 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import BookCard from './BookCard';
+import '../CSS/Books.css'
 
 function Books() {
 
-const [books, setbooks] = useState([]);
+const [books, setBooks] = useState([]);
 
 useEffect(() => {
   
+axios.get("http://localhost:3001/book/books")
+.then(res => {
 
-  return () => {
-    
-  }
+  setBooks(res.data)
+  console.log(res.data)
+}).catch(err => console.log(err))
+  
 }, []);
 
 
@@ -17,7 +23,15 @@ useEffect(() => {
 
 
   return (
-    <div>Books</div>
+    <div className='book-list'>
+      
+{
+
+  books.map(book =>{
+   return <BookCard key={book._id} book = {book}></BookCard>
+  })
+}
+    </div>
   )
 }
 
