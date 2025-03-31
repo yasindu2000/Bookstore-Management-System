@@ -2,7 +2,7 @@ import React from 'react'
 import '../CSS/Books.css'
 import { Link } from 'react-router-dom';
 
-function BookCard({book}) {
+function BookCard({book, role}) {
 
     const {name, author, imageUrl} = book;
   return (
@@ -12,10 +12,15 @@ function BookCard({book}) {
             <h3>{name}</h3>
             <p>{author}</p>
          </div>
+         {role === "admin" && 
+         
          <div className="book-actions">
+          
             <button><Link to={`/book/${book._id}`} className='btn-link'>Edit</Link></button>
             <button><Link to={`/delete/${book._id}`} className='btn-link'>Delete</Link></button>
          </div>
+         }
+         
     </div>
   )
 }

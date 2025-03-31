@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import BookCard from './BookCard';
 import '../CSS/Books.css'
 
-function Books() {
+function Books({role}) {
 
 const [books, setBooks] = useState([]);
 
@@ -28,7 +28,7 @@ axios.get("http://localhost:3001/book/books")
 {
 
   books.map(book =>{
-   return <BookCard key={book._id} book = {book}></BookCard>
+   return <BookCard key={book._id} book = {book} role = {role}></BookCard>
   })
 }
     </div>
