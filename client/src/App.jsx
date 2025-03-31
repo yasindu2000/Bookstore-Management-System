@@ -35,7 +35,7 @@ function App() {
       <Navbar role = {role} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Books" element={<Books/>} />
+        <Route path="/books" element={<Books/>} />
         <Route path="/login" element={<Login setRoleUpdate = {setRole}/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/addstudent" element={<AddStudent/>} />

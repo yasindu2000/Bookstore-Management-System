@@ -15,7 +15,13 @@ function AddBook() {
 
     axios.post("http://localhost:3001/book/add", {name, author, imageUrl})
     .then(res => {
-        console.log(res)
+        if(res.data.added){
+           navigate("/books");
+
+        }else{
+            console.log(res)
+        }
+        
     })
     .catch(err => console.log(err))
   };
