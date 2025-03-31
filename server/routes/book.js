@@ -62,5 +62,18 @@ router.put('/book/:id', async (req, res)=>{
     }
     
 })
+router.delete('/book/:id', async (req, res)=>{
+
+    try {
+        const id = req.params.id;
+        const book = await Book.findByIdAndDelete({_id : id})
+        return res.json({deleted: true, book})
+    } catch (error) {
+        return res.json(error)
+    }
+    
+})
+
+
 
 export {router as bookRouter}
