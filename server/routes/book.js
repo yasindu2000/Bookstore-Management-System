@@ -39,4 +39,28 @@ router.get('/books', async (req, res)=>{
     }
 })
 
+router.get('/book/:id', async (req, res)=>{
+
+    try {
+        const id = req.params.id;
+        const book = await Book.findById({_id: id})
+        return res.json(book)
+    } catch (error) {
+        return res.json(error)
+    }
+    
+})
+
+router.put('/book/:id', async (req, res)=>{
+
+    try {
+        const id = req.params.id;
+        const book = await Book.findByIdAndUpdate({_id: id}, req.body)
+        return res.json({updated: true, book})
+    } catch (error) {
+        return res.json(error)
+    }
+    
+})
+
 export {router as bookRouter}

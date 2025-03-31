@@ -3,11 +3,13 @@
 .book-list{
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
 }
 
 .book-card{
+    
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
