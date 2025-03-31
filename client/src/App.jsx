@@ -8,6 +8,7 @@ import AddStudent from "./components/AddStudent";
 import { useEffect, useState } from "react";
 import Logout from "./components/Logout";
 import axios from 'axios';
+import AddBook from "./components/AddBook";
 
 function App() {
   axios.defaults.withCredentials = true
@@ -39,6 +40,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/addstudent" element={<AddStudent/>} />
         <Route path="/logout" element={<Logout setRole = {setRole}/>} />
+        <Route path="/addbook" element={<AddBook/>} />
 
       </Routes>
     </BrowserRouter>
